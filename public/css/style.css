@@ -1,0 +1,40 @@
+.critical {
+    width: 25px;
+    height: 40px;
+    background: #c30000 !important;
+    margin: 2%;
+    color: white;
+    text-align:center;
+}
+
+.high {
+    width: 25px;
+    height: 30px;
+    background: #e04b49 !important;
+    margin: 2%;
+    color: white;
+    text-align: center;
+}
+
+.medium {
+    width: 25px;
+    height: 20px;
+    background: #f5a623 !important;
+    margin: 2%;
+    color: white;
+    text-align: center;
+}
+
+.low {
+    width: 25px;
+    height: 15px;
+    background: #adb5bd !important;
+    margin: 2%;
+    color: white;
+    text-align: center;
+}
+
+.text-botton {
+   /* bottom: -21px !important;
+    position: relative;*/
+}

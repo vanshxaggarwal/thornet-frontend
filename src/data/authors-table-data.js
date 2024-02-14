@@ -1,0 +1,58 @@
+export const authorsTableData = [
+    {
+        img: "/img/team-2.jpeg",
+        name: "StudyKik",
+        email: "140 Apps",
+        job: ["critical", "high", "medium", "low"],
+        status: [30, 20, 12, 17],
+        online: true,
+        date: "23/04/18",
+    },
+    {
+        img: "/img/team-1.jpeg",
+        name: "Modal Digital",
+        email: "56 Apps",
+        job: ["critical", "high", "medium", "low"],
+        status: [40, 18, 50, 70],
+        online: false,
+        date: "11/01/19",
+    },
+    {
+        img: "/img/team-4.jpeg",
+        name: "DataLitHub",
+        email: "48 Apps",
+        job: ["critical", "high", "medium", "low"],
+        status: [20, 30, 20, 50],
+        online: true,
+        date: "19/09/17",
+    },
+    {
+        img: "/img/team-3.jpeg",
+        name: "Illingworth",
+        email: "98 Apps",
+        job: ["critical", "high", "medium", "low"],
+        status: [17, 40, 17, 20],
+        online: true,
+        date: "24/12/08",
+    },
+    {
+        img: "/img/bruce-mars.jpeg",
+        name: "SNAP",
+        email: "46 Apps",
+        job: ["critical", "high", "medium", "low"],
+        status: [25, 45, 50, 71],
+        online: false,
+        date: "04/10/21",
+    },
+    {
+        img: "/img/team-2.jpeg",
+        name: "CHCUK",
+        email: "14 Apps",
+        job: ["critical", "high", "medium", "low"],
+        status: [25, 20, 30, 40],
+        online: false,
+        date: "14/09/20",
+    },
+];
+
+export default authorsTableData;
