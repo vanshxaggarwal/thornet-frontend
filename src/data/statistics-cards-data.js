@@ -1,16 +1,16 @@
 import {
-    BanknotesIcon,
-    UserPlusIcon,
-    UsersIcon,
-    ChartBarIcon,
+    ExclamationTriangleIcon,
+    ExclamationCircleIcon,
+    ArrowUpCircleIcon,
+    ArrowDownCircleIcon,
 } from "@heroicons/react/24/solid";
 
 export const statisticsCardsData = [
     {
-        color: "gray",
-        icon: BanknotesIcon,
+        color: "red",
+        icon: ExclamationTriangleIcon,
         title: "Critical",
-        value: "53k",
+        value: "2312",
         footer: {
             color: "text-green-500",
             value: "+55%",
@@ -18,10 +18,10 @@ export const statisticsCardsData = [
         },
     },
     {
-        color: "gray",
-        icon: UsersIcon,
+        color: "orange",
+        icon: ArrowUpCircleIcon,
         title: "High",
-        value: "2,300",
+        value: "5,300",
         footer: {
             color: "text-green-500",
             value: "+3%",
@@ -29,10 +29,10 @@ export const statisticsCardsData = [
         },
     },
     {
-        color: "gray",
-        icon: UserPlusIcon,
+        color: "amber",
+        icon: ExclamationCircleIcon,
         title: "Medium",
-        value: "3,462",
+        value: "462",
         footer: {
             color: "text-red-500",
             value: "-2%",
@@ -40,10 +40,10 @@ export const statisticsCardsData = [
         },
     },
     {
-        color: "gray",
-        icon: ChartBarIcon,
+        color: "green",
+        icon: ArrowDownCircleIcon,
         title: "Low",
-        value: "103,430",
+        value: "10430",
         footer: {
             color: "text-green-500",
             value: "+5%",
