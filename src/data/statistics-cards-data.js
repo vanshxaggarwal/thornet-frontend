@@ -1,14 +1,14 @@
 import {
     ExclamationTriangleIcon,
     ExclamationCircleIcon,
-    ArrowUpCircleIcon,
-    ArrowDownCircleIcon,
+    ChevronUpDownIcon,
+    ChevronDownIcon,
 } from "@heroicons/react/24/solid";
 
 export const statisticsCardsData = [
     {
         color: "red",
-        icon: ExclamationTriangleIcon,
+        icon: ExclamationCircleIcon,
         title: "Critical",
         value: "2312",
         footer: {
@@ -19,7 +19,7 @@ export const statisticsCardsData = [
     },
     {
         color: "orange",
-        icon: ArrowUpCircleIcon,
+        icon: ExclamationTriangleIcon,
         title: "High",
         value: "5,300",
         footer: {
@@ -30,7 +30,7 @@ export const statisticsCardsData = [
     },
     {
         color: "amber",
-        icon: ExclamationCircleIcon,
+        icon: ChevronUpDownIcon,
         title: "Medium",
         value: "462",
         footer: {
@@ -41,7 +41,7 @@ export const statisticsCardsData = [
     },
     {
         color: "green",
-        icon: ArrowDownCircleIcon,
+        icon: ChevronDownIcon,
         title: "Low",
         value: "10430",
         footer: {
