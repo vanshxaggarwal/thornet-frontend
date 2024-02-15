@@ -66,7 +66,7 @@ export function Home() {
                 ))}
             </div>
             <div className="mb-4 -ml-12 grid grid-cols-1 gap-6 xl:grid-cols-3 overflow-hidden">
-                <Card Style="height:2.5%" className="overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm">
+                <Card Style="height:25%" className="overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm">
                     <CardHeader
                         floated={false}
                         shadow={false}
@@ -173,7 +173,7 @@ export function Home() {
                         </table>
                     </CardBody>
                 </Card>
-                <Card Style="height:2.5%" className="border border-blue-gray-100 shadow-sm">
+                <Card Style="height:25%" className="border border-blue-gray-100 shadow-sm">
                     <CardHeader
                         floated={false}
                         shadow={false}
@@ -196,8 +196,8 @@ export function Home() {
                     </CardHeader>
                     <CardBody className="pt-0 overflow-y-scroll">
                         {ordersOverviewData.map(
-                            ({ icon, color, appName, lastScanned }, key) => (
-                                <div key={appName} className="flex items-start gap-4 py-3">
+                            ({ icon, color, appGroup, totalApps, lastScanned }, key) => (
+                                <div key={appGroup} className="flex items-start gap-4 py-3">
                                     <div
                                         className={`relative p-1 after:absolute after:-bottom-6 after:left-2/4 after:w-0.5 after:-translate-x-2/4 after:bg-blue-gray-50 after:content-[''] ${key === ordersOverviewData.length - 1
                                             ? "after:h-0"
@@ -214,7 +214,7 @@ export function Home() {
                                             color="blue-gray"
                                             className="block font-medium"
                                         >
-                                            {appName}
+                                            {appGroup} | {totalApps}
                                         </Typography>
                                         <Typography
                                             as="span"

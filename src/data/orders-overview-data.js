@@ -17,17 +17,8 @@ var data = await fetchData();
 export const ordersOverviewData = data.map(s => ({
     icon: ArrowPathIcon,
     color: "text-blue-gray-300",
-    "appName": s.appName,
-    "lastScanned": s.lastScanned
+    "appGroup": s.appGroup,
+    "totalApps": s.totalApps,
+    "lastScanned": new Date(s.lastScanned).toLocaleDateString()
 }));
-//    [
-//  {
-//    icon: ArrowPathIcon,
-//    color: "text-blue-gray-300",
-//    appName: "StudyKik_API_JS",
-//    lastScanned: "22 DEC 7:20 PM"
-//  }
-//];
-
-
 export default ordersOverviewData;
