@@ -4,7 +4,7 @@ import {
 
 async function fetchData() {
     try {
-        debugger;
+        //debugger;
         const response = await fetch("https://localhost:7210/api/dashboard/outdatedscans");
         const data = await response.json();
         return data;
