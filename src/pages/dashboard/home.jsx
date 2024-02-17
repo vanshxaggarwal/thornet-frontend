@@ -29,7 +29,7 @@ import { CheckCircleIcon, ClockIcon } from "@heroicons/react/24/solid";
 
 export function Home() {
     return (
-        <div className="mt-12">
+        <div className="mt-12 uppercase">
             <div className="mb-12 -ml-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
                 {statisticsCardsData.map(({ icon, title, footer, ...rest }) => (
                     <StatisticsCard
@@ -82,7 +82,7 @@ export function Home() {
                                 className="flex items-center gap-1 font-normal text-blue-gray-600"
                             >
                                 <CheckCircleIcon strokeWidth={3} className="h-4 w-4 text-blue-gray-200" />
-                                <strong>30 breaches</strong> this month
+                                <strong>{ projectsTableData.filter(s => new Date(s.finalDate).getMonth() == new Date().getMonth()).length } breaches</strong> this month
                             </Typography>
                         </div>
                         {/*<Menu placement="left-start">*/}
@@ -106,7 +106,7 @@ export function Home() {
                         <table className="w-full min-w-[640px] table-auto">
                             <thead>
                                 <tr>
-                                    {["App Group", "Total Apps with impending braches", "Days left for earliest breach", "Severity"].map(
+                                    {["App Group", "Total Apps with impending breaches", "Days left for earliest breach", "Last Scanned On", "Nearest Date to breaches", "Severity",].map(
                                         (el) => (
                                             <th
                                                 key={el}
@@ -125,42 +125,74 @@ export function Home() {
                             </thead>
                             <tbody>
                                 {projectsTableData.map(
-                                    ({ img, appName, members, severity, completion, count }, key) => {
+                                    ({ groupName, count, days, last_scanned, finalDate, severity }, key) => {
                                         const className = `py-3 px-5 ${key === projectsTableData.length - 1
                                             ? ""
                                             : "border-b border-blue-gray-50"
                                             }`;
 
                                         return (
-                                            <tr key={appName}>
+                                            <tr key={groupName}>
                                                 <td className={className}>
                                                     <div className="flex items-center gap-4">
-                                                        {appName}
-                                                    </div>
-                                                </td>
-                                                <td className={className}>
-                                                    {count}
-                                                </td>
-                                                <td className={className}>
-                                                    <div className="w-10/12">
                                                         <Typography
                                                             variant="small"
-                                                            className="mb-1 block text-xs font-medium text-blue-gray-600"
+                                                            className="text-xs font-medium text-blue-gray-600"
                                                         >
-                                                            {completion}%
+                                                            {groupName}
                                                         </Typography>
-                                                        <Progress
-                                                            value={completion}
-                                                            variant="gradient"
-                                                            color={completion === 100 ? "green" : "blue"}
-                                                            className="h-1"
-                                                        />
                                                     </div>
                                                 </td>
                                                 <td className={className}>
                                                     <Typography
                                                         variant="small"
                                                         className="text-xs font-medium text-blue-gray-600"
+                                                    >
+                                                        {count}
+                                                    </Typography>
+                                                </td>
+                                                <td className={className}>
+                                                    <div className="w-10/12">
+                                                        <Typography
+                                                            variant="small"
+                                                            className="text-xs font-medium text-blue-gray-600"
+                                                        >
+                                                            {days}
+                                                        </Typography>
+                                                        {/*<Typography*/}
+                                                        {/*    variant="small"*/}
+                                                        {/*    className="mb-1 block text-xs font-medium text-blue-gray-600"*/}
+                                                        {/*>*/}
+                                                        {/*    {completion}%*/}
+                                                        {/*</Typography>*/}
+                                                        {/*<Progress*/}
+                                                        {/*    value={completion}*/}
+                                                        {/*    variant="gradient"*/}
+                                                        {/*    color={completion === 100 ? "green" : "blue"}*/}
+                                                        {/*    className="h-1"*/}
+                                                        {/*/>*/}
+                                                    </div>
+                                                </td>                                              
+                                                <td className={className}>
+                                                    <Typography
+                                                        variant="small"
+                                                        className="text-xs font-medium text-blue-gray-600"
+                                                    >
+                                                        {last_scanned}
+                                                    </Typography>
+                                                </td>
+                                                <td className={className}>
+                                                    <Typography
+                                                        variant="small"
+                                                        className="text-xs font-medium text-blue-gray-600"
+                                                    >
+                                                        {finalDate}
+                                                    </Typography>                                                    
+                                                </td>
+                                                <td className={className}>
+                                                    <Typography
+                                                        variant="small"
+                                                        className={"text-xs font-medium " + severity == "critical" ? "text-red-500" : severity == "high" ? "text-yellow-500" : severity == "medium" ? "text-[#f5a623]" : "text-grey-500"}
                                                     >
                                                         {severity}
                                                     </Typography>
@@ -212,14 +244,14 @@ export function Home() {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="block font-medium"
+                                            className="font-medium text-blue-gray-600 text-[12px]"
                                         >
                                             {appGroup} | {totalApps}
                                         </Typography>
                                         <Typography
                                             as="span"
                                             variant="small"
-                                            className="text-xs font-medium text-blue-gray-500"
+                                            className="font-small text-blue-gray-600 text-[12px]"
                                         >
                                             Last Scanned - {lastScanned}
                                         </Typography>

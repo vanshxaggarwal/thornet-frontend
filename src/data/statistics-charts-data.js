@@ -25,13 +25,26 @@ const websiteViewsChart = {
   },
 };
 
+
+async function fetchData() {
+    try {
+        //debugger;
+        const response = await fetch("https://localhost:7210/api/Dashboard/resolved");
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return null;
+    }
+}
+var data = await fetchData();
 const dailySalesChart = {
   type: "line",
   height: 220,
   series: [
     {
           name: "Vulnerabilities",
-      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+          data: data.map(s => s.total),
     },
   ],
   options: {
@@ -45,28 +58,30 @@ const dailySalesChart = {
     },
     xaxis: {
       ...chartsConfig.xaxis,
-      categories: [
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
+        categories: data.map(s => s.month),
     },
   },
 };
 
+async function fetchData2() {
+    try {
+        //debugger;
+        const response = await fetch("https://localhost:7210/api/Dashboard/resolved");
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return null;
+    }
+}
+var data2 = await fetchData2();
 const completedTaskChart = {
   type: "line",
   height: 220,
   series: [
     {
-      name: "Vulnerabilities",
-      data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+          name: "Vulnerabilities",
+          data: data2.map(s=>s.total),
     },
   ],
   options: {
@@ -79,18 +94,8 @@ const completedTaskChart = {
       size: 5,
     },
     xaxis: {
-      ...chartsConfig.xaxis,
-      categories: [
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
+        ...chartsConfig.xaxis,
+        categories: data2.map(s => s.month),
     },
   },
 };
