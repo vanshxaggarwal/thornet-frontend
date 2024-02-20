@@ -1,13 +1,5 @@
 <!-- 
 =========================================================
-* Material Tailwind Dashboard React - v2.1.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/material-tailwind-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-tailwind-dashboard-react/blob/main/LICENSE.md)
-* Coded by Creative Tim
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,13 +18,48 @@
       integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
-    <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-    
-    <!-- Nepcha Analytics (nepcha.com) -->
-    <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
-    <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+    />  
   </head>
+<script>
+    Date.prototype.timeAgo = function () {
+        var currentTimestamp = new Date().getTime();
+        var timestamp = this.getTime();
+        var difference = currentTimestamp - timestamp;
+        var minute = 60 * 1000;
+        var hour = minute * 60;
+        var day = hour * 24;
+        var week = day * 7;
+        var month = day * 30;
+        var year = day * 365;
+        if (difference < minute) {
+            return 'Just now';
+        } else if (difference < 2 * minute) {
+            return 'A minute ago';
+        } else if (difference < hour) {
+            return Math.floor(difference / minute) + ' minutes ago';
+        } else if (difference < 2 * hour) {
+            return 'An hour ago';
+        } else if (difference < day) {
+            return Math.floor(difference / hour) + ' hours ago';
+        } else if (difference < 2 * day) {
+            return 'Yesterday';
+        } else if (difference < week) {
+            return Math.floor(difference / day) + ' days ago';
+        } else if (difference < 2 * week) {
+            return 'A week ago';
+        } else if (difference < month) {
+            return Math.floor(difference / week) + ' weeks ago';
+        } else if (difference < 2 * month) {
+            return 'A month ago';
+        } else if (difference < year) {
+            return Math.floor(difference / month) + ' months ago';
+        } else if (difference < 2 * year) {
+            return 'A year ago';
+        } else {
+            return Math.floor(difference / year) + ' years ago';
+        }
+    };
+</script>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

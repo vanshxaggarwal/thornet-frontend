@@ -2,7 +2,7 @@ import { chartsConfig } from "@/configs";
 
 const websiteViewsChart = {
   type: "bar",
-  height: 220,
+  height: 300,
   series: [
     {
           name: "Vulnerabilities",
@@ -24,14 +24,14 @@ const websiteViewsChart = {
     },
   },
 };
-
-
 async function fetchData() {
     try {
         //debugger;
         const response = await fetch("https://localhost:7210/api/Dashboard/resolved");
         const data = await response.json();
         return data;
+        //return a;
+        //return { "data": a, "cache_time": response.headers.get('date') };
     } catch (error) {
         console.error("Error fetching data:", error);
         return null;
@@ -40,7 +40,7 @@ async function fetchData() {
 var data = await fetchData();
 const dailySalesChart = {
   type: "line",
-  height: 220,
+  height: 300,
   series: [
     {
           name: "Vulnerabilities",
@@ -66,9 +66,10 @@ const dailySalesChart = {
 async function fetchData2() {
     try {
         //debugger;
-        const response = await fetch("https://localhost:7210/api/Dashboard/resolved");
+        const response = await fetch("https://localhost:7210/api/Dashboard/opened");
         const data = await response.json();
         return data;
+        //return { "data": a, "cache_time": response.headers.get('date') };
     } catch (error) {
         console.error("Error fetching data:", error);
         return null;
@@ -77,7 +78,7 @@ async function fetchData2() {
 var data2 = await fetchData2();
 const completedTaskChart = {
   type: "line",
-  height: 220,
+  height: 300,
   series: [
     {
           name: "Vulnerabilities",
@@ -108,29 +109,28 @@ const completedTasksChart = {
     },
   ],
 };
-
 export const statisticsChartsData = [
-  {
-    color: "white",
-    title: "SLA",
-    description: "SLA Compliance Trend",
+    {
+        color: "white",
+        title: "SLA",
+        description: "SLA Compliance Trend",
         footer: "updated 8 min ago",
-    chart: websiteViewsChart,
-  },
-  {
-    color: "white",
-    title: "Open",
-    description: "Open Vulnerability Trend",
-    footer: "updated 4 min ago",
-    chart: dailySalesChart,
-  },
-  {
-    color: "white",
-    title: "Resolved",
-    description: "Closed Vulnerability Trend",
-    footer: "just updated",
-    chart: completedTasksChart,
-  },
+        chart: websiteViewsChart,
+    },
+    {
+        color: "white",
+        title: "Open",
+        description: "Open Vulnerability Trend",
+        footer: "updated 4 min ago", //new Date(data.cache_time).timeAgo(),
+        chart: dailySalesChart,
+    },
+    {
+        color: "white",
+        title: "Resolved",
+        description: "Closed Vulnerability Trend",
+        footer: "just updated",
+        chart: completedTasksChart,
+    },
 ];
 
 export default statisticsChartsData;

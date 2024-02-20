@@ -5,10 +5,10 @@ import {
     ArrowDownCircleIcon,
 } from "@heroicons/react/24/solid";
 //import config from "./jsconfig.json";
+
 async function fetchData() {
-    try {
-        //debugger;
-        const response = await fetch("https://localhost:7210/api/Dashboard/tiles");
+    try {        
+        const response = await fetch("https://localhost:7210/api/Dashboard/tiles");        
         const data = await response.json();
         return data;
     } catch (error) {
@@ -19,7 +19,7 @@ async function fetchData() {
 
 async function update_tiles_count() {
     const data = await fetchData();
-    if (data) {
+    if (data) {        
         statisticsCardsData[0].value = data.find(obj => obj.key === 'critical')?.count;
         statisticsCardsData[1].value = data.find(obj => obj.key === 'medium')?.count;
         statisticsCardsData[2].value = data.find(obj => obj.key === 'high')?.count;
