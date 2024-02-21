@@ -1,1 +1,254 @@
-[{"group_name":"ACT","total_app":2,"severity":"medium","last_scanned":"2023-03-10T19:31:20.183035","num_of_days":348},{"group_name":"AI2","total_app":8,"severity":"medium","last_scanned":"2023-04-26T09:14:47.937639","num_of_days":301},{"group_name":"AppSecOSS","total_app":40,"severity":"medium","last_scanned":"2024-01-12T06:21:41.601495","num_of_days":40},{"group_name":"AppSecTestApps","total_app":7,"severity":"medium","last_scanned":"2023-12-13T14:20:56.2093","num_of_days":70},{"group_name":"BoldSkyStudio","total_app":1,"severity":"critical","last_scanned":"2024-01-31T22:51:16.581218","num_of_days":21},{"group_name":"CRAForecasting","total_app":1,"severity":"low","last_scanned":"2022-11-24T09:36:02.351644","num_of_days":454},{"group_name":"CreativeStudios","total_app":2,"severity":"high","last_scanned":"2023-08-02T12:29:44.308594","num_of_days":203},{"group_name":"CustodianRequest","total_app":1,"severity":"critical","last_scanned":"2023-08-04T15:21:41.428828","num_of_days":201},{"group_name":"Databricks-GROUP","total_app":1,"severity":"low","last_scanned":"2023-06-13T14:39:20.90937","num_of_days":253},{"group_name":"DataLitHub","total_app":1,"severity":"critical","last_scanned":"2023-11-29T23:10:32.545892","num_of_days":84},{"group_name":"DIH","total_app":2,"severity":"low","last_scanned":"2023-08-07T10:30:08.994284","num_of_days":198},{"group_name":"DMTT_LMTT","total_app":1,"severity":"critical","last_scanned":"2024-02-08T13:06:44.95341","num_of_days":13},{"group_name":"DRM","total_app":1,"severity":"high","last_scanned":"2024-01-29T15:04:30.565992","num_of_days":23},{"group_name":"EDTA File Transfer","total_app":3,"severity":"low","last_scanned":"2023-05-02T21:06:23.159157","num_of_days":295},{"group_name":"Golden RCD","total_app":1,"severity":"low","last_scanned":"2023-12-04T07:41:16.798024","num_of_days":79},{"group_name":"IEP_Domain","total_app":25,"severity":"medium","last_scanned":"2024-01-25T17:18:47.35068","num_of_days":27},{"group_name":"Illingworth","total_app":2,"severity":"critical","last_scanned":"2023-01-13T14:58:03.421686","num_of_days":404},{"group_name":"InLab","total_app":2,"severity":"critical","last_scanned":"2024-01-30T20:08:05.24351","num_of_days":22},{"group_name":"Modal Digital","total_app":14,"severity":"medium","last_scanned":"2024-01-18T16:19:39.650178","num_of_days":34},{"group_name":"PreRISK","total_app":2,"severity":"medium","last_scanned":"2023-01-23T22:11:39.21151","num_of_days":394},{"group_name":"PrincetonEarlyPhase","total_app":1,"severity":"critical","last_scanned":"2023-07-03T13:08:59.281313","num_of_days":233},{"group_name":"PvHub","total_app":1,"severity":"critical","last_scanned":"2023-03-28T18:39:53.987425","num_of_days":330},{"group_name":"Rx-Data","total_app":1,"severity":"medium","last_scanned":"2023-02-08T11:00:17.832636","num_of_days":378},{"group_name":"rxds-SNAP-code-scan","total_app":15,"severity":"medium","last_scanned":"2023-07-11T09:07:45.723934","num_of_days":225},{"group_name":"SampleCheck","total_app":1,"severity":"critical","last_scanned":"2023-07-18T18:37:09.070246","num_of_days":218},{"group_name":"Seleris","total_app":2,"severity":"medium","last_scanned":"2023-11-27T20:27:09.127842","num_of_days":86},{"group_name":"Sientra","total_app":4,"severity":"medium","last_scanned":"2023-08-23T14:26:31.707187","num_of_days":182},{"group_name":"StudyKik","total_app":215,"severity":"medium","last_scanned":"2024-02-19T19:16:34.928632","num_of_days":2},{"group_name":"StudyKik-Global","total_app":131,"severity":"medium","last_scanned":"2023-12-20T05:16:02.296979","num_of_days":63},{"group_name":"SYNH-CHCUK","total_app":1,"severity":"low","last_scanned":"2023-06-22T10:38:08.535432","num_of_days":244},{"group_name":"SYNH-CUSTOM-APPS","total_app":1,"severity":"medium","last_scanned":"2024-01-22T18:37:40.028888","num_of_days":30},{"group_name":"SYNH-IntLoader4MCTMS","total_app":1,"severity":"critical","last_scanned":"2023-07-07T09:02:32.512114","num_of_days":229},{"group_name":"SYNH-NIHToolboxService","total_app":1,"severity":"low","last_scanned":"2023-07-12T12:46:07.608375","num_of_days":224},{"group_name":"SynopsisConnect","total_app":2,"severity":"critical","last_scanned":"2023-04-24T11:12:27.655191","num_of_days":303},{"group_name":"TrialEAS","total_app":2,"severity":"medium","last_scanned":"2023-07-11T13:20:22.327132","num_of_days":225},{"group_name":"TrialEASNovo","total_app":1,"severity":"critical","last_scanned":"2023-07-26T13:45:28.329976","num_of_days":210}]
+[
+  {
+    "group_name": "ACT",
+    "total_app": 2,
+    "severity": "medium",
+    "last_scanned": "2023-03-10T19:31:20.183035",
+    "num_of_days": 348
+  },
+  {
+    "group_name": "AI2",
+    "total_app": 8,
+    "severity": "medium",
+    "last_scanned": "2023-04-26T09:14:47.937639",
+    "num_of_days": 301
+  },
+  {
+    "group_name": "AppSecOSS",
+    "total_app": 40,
+    "severity": "medium",
+    "last_scanned": "2024-01-12T06:21:41.601495",
+    "num_of_days": 40
+  },
+  {
+    "group_name": "AppSecTestApps",
+    "total_app": 7,
+    "severity": "medium",
+    "last_scanned": "2023-12-13T14:20:56.2093",
+    "num_of_days": 70
+  },
+  {
+    "group_name": "BoldSkyStudio",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2024-01-31T22:51:16.581218",
+    "num_of_days": 21
+  },
+  {
+    "group_name": "CRAForecasting",
+    "total_app": 1,
+    "severity": "low",
+    "last_scanned": "2022-11-24T09:36:02.351644",
+    "num_of_days": 454
+  },
+  {
+    "group_name": "CreativeStudios",
+    "total_app": 2,
+    "severity": "high",
+    "last_scanned": "2023-08-02T12:29:44.308594",
+    "num_of_days": 203
+  },
+  {
+    "group_name": "CustodianRequest",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2023-08-04T15:21:41.428828",
+    "num_of_days": 201
+  },
+  {
+    "group_name": "Databricks-GROUP",
+    "total_app": 1,
+    "severity": "low",
+    "last_scanned": "2023-06-13T14:39:20.90937",
+    "num_of_days": 253
+  },
+  {
+    "group_name": "DataLitHub",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2023-11-29T23:10:32.545892",
+    "num_of_days": 84
+  },
+  {
+    "group_name": "DIH",
+    "total_app": 2,
+    "severity": "low",
+    "last_scanned": "2023-08-07T10:30:08.994284",
+    "num_of_days": 198
+  },
+  {
+    "group_name": "DMTT_LMTT",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2024-02-08T13:06:44.95341",
+    "num_of_days": 13
+  },
+  {
+    "group_name": "DRM",
+    "total_app": 1,
+    "severity": "high",
+    "last_scanned": "2024-01-29T15:04:30.565992",
+    "num_of_days": 23
+  },
+  {
+    "group_name": "EDTA File Transfer",
+    "total_app": 3,
+    "severity": "low",
+    "last_scanned": "2023-05-02T21:06:23.159157",
+    "num_of_days": 295
+  },
+  {
+    "group_name": "Golden RCD",
+    "total_app": 1,
+    "severity": "low",
+    "last_scanned": "2023-12-04T07:41:16.798024",
+    "num_of_days": 79
+  },
+  {
+    "group_name": "IEP_Domain",
+    "total_app": 25,
+    "severity": "medium",
+    "last_scanned": "2024-01-25T17:18:47.35068",
+    "num_of_days": 27
+  },
+  {
+    "group_name": "Illingworth",
+    "total_app": 2,
+    "severity": "critical",
+    "last_scanned": "2023-01-13T14:58:03.421686",
+    "num_of_days": 404
+  },
+  {
+    "group_name": "InLab",
+    "total_app": 2,
+    "severity": "critical",
+    "last_scanned": "2024-01-30T20:08:05.24351",
+    "num_of_days": 22
+  },
+  {
+    "group_name": "Modal Digital",
+    "total_app": 14,
+    "severity": "medium",
+    "last_scanned": "2024-01-18T16:19:39.650178",
+    "num_of_days": 34
+  },
+  {
+    "group_name": "PreRISK",
+    "total_app": 2,
+    "severity": "medium",
+    "last_scanned": "2023-01-23T22:11:39.21151",
+    "num_of_days": 394
+  },
+  {
+    "group_name": "PrincetonEarlyPhase",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2023-07-03T13:08:59.281313",
+    "num_of_days": 233
+  },
+  {
+    "group_name": "PvHub",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2023-03-28T18:39:53.987425",
+    "num_of_days": 330
+  },
+  {
+    "group_name": "Rx-Data",
+    "total_app": 1,
+    "severity": "medium",
+    "last_scanned": "2023-02-08T11:00:17.832636",
+    "num_of_days": 378
+  },
+  {
+    "group_name": "rxds-SNAP-code-scan",
+    "total_app": 15,
+    "severity": "medium",
+    "last_scanned": "2023-07-11T09:07:45.723934",
+    "num_of_days": 225
+  },
+  {
+    "group_name": "SampleCheck",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2023-07-18T18:37:09.070246",
+    "num_of_days": 218
+  },
+  {
+    "group_name": "Seleris",
+    "total_app": 2,
+    "severity": "medium",
+    "last_scanned": "2023-11-27T20:27:09.127842",
+    "num_of_days": 86
+  },
+  {
+    "group_name": "Sientra",
+    "total_app": 4,
+    "severity": "medium",
+    "last_scanned": "2023-08-23T14:26:31.707187",
+    "num_of_days": 182
+  },
+  {
+    "group_name": "StudyKik",
+    "total_app": 215,
+    "severity": "medium",
+    "last_scanned": "2024-02-19T19:16:34.928632",
+    "num_of_days": 2
+  },
+  {
+    "group_name": "StudyKik-Global",
+    "total_app": 131,
+    "severity": "medium",
+    "last_scanned": "2023-12-20T05:16:02.296979",
+    "num_of_days": 63
+  },
+  {
+    "group_name": "SYNH-CHCUK",
+    "total_app": 1,
+    "severity": "low",
+    "last_scanned": "2023-06-22T10:38:08.535432",
+    "num_of_days": 244
+  },
+  {
+    "group_name": "SYNH-CUSTOM-APPS",
+    "total_app": 1,
+    "severity": "medium",
+    "last_scanned": "2024-01-22T18:37:40.028888",
+    "num_of_days": 30
+  },
+  {
+    "group_name": "SYNH-IntLoader4MCTMS",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2023-07-07T09:02:32.512114",
+    "num_of_days": 229
+  },
+  {
+    "group_name": "SYNH-NIHToolboxService",
+    "total_app": 1,
+    "severity": "low",
+    "last_scanned": "2023-07-12T12:46:07.608375",
+    "num_of_days": 224
+  },
+  {
+    "group_name": "SynopsisConnect",
+    "total_app": 2,
+    "severity": "critical",
+    "last_scanned": "2023-04-24T11:12:27.655191",
+    "num_of_days": 303
+  },
+  {
+    "group_name": "TrialEAS",
+    "total_app": 2,
+    "severity": "medium",
+    "last_scanned": "2023-07-11T13:20:22.327132",
+    "num_of_days": 225
+  },
+  {
+    "group_name": "TrialEASNovo",
+    "total_app": 1,
+    "severity": "critical",
+    "last_scanned": "2023-07-26T13:45:28.329976",
+    "num_of_days": 210
+  }
+]

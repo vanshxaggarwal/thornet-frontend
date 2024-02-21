@@ -12,8 +12,11 @@ async function fetchData() {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error("Error fetching data:", error);
-        return null;
+        if (error) {
+            const response = await fetch("/data/tiles.customization");
+            const data = await response.json();
+            return data;
+        }
     }
 }
 

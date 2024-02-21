@@ -1,1 +1,247 @@
-[{"appGroup":"ACT","totalApps":144,"lastScanned":"2024-01-19T19:58:15.03"},{"appGroup":"AI2","totalApps":212,"lastScanned":"2023-05-25T09:21:58.883"},{"appGroup":"AppSecOSS","totalApps":235,"lastScanned":"2024-01-12T06:21:47.903"},{"appGroup":"AZURE-LEAPFROG-APPLICATIONS","totalApps":4,"lastScanned":"2023-06-15T11:59:23.713"},{"appGroup":"AZURE-LEAPFROG-APPLICATIONS-APP-GROUP","totalApps":9,"lastScanned":"2023-06-15T10:59:17.117"},{"appGroup":"BoldSkyStudio","totalApps":2,"lastScanned":"2023-09-22T02:28:17.01"},{"appGroup":"CDM-APP-GROUP","totalApps":77,"lastScanned":"2024-01-09T10:54:39.36"},{"appGroup":"Commercial Data Lake","totalApps":1,"lastScanned":"2023-08-28T14:27:55.2"},{"appGroup":"CORP-APP-GROUP","totalApps":28,"lastScanned":"2023-09-12T17:47:46.92"},{"appGroup":"CRAForecasting","totalApps":16,"lastScanned":"2022-11-24T09:52:47.97"},{"appGroup":"CreativeStudios","totalApps":166,"lastScanned":"2024-01-19T19:42:47.837"},{"appGroup":"CustodianRequest","totalApps":7,"lastScanned":"2023-08-23T19:49:35.7"},{"appGroup":"Databricks-GROUP","totalApps":1,"lastScanned":"2023-06-13T14:39:21.34"},{"appGroup":"DataLitHub","totalApps":4,"lastScanned":"2023-12-15T15:31:27.373"},{"appGroup":"DIH","totalApps":4,"lastScanned":"2023-08-07T10:34:52.673"},{"appGroup":"DRM","totalApps":33,"lastScanned":"2024-01-16T14:48:07.563"},{"appGroup":"EDM-APP-GROUP","totalApps":1,"lastScanned":"2023-05-05T10:22:14.67"},{"appGroup":"EDTA File Transfer","totalApps":19,"lastScanned":"2023-07-28T15:43:46.083"},{"appGroup":"Golden RCD","totalApps":1,"lastScanned":"2023-12-04T07:41:21.423"},{"appGroup":"HR Analytics","totalApps":13,"lastScanned":"2022-11-18T09:20:53.67"},{"appGroup":"ICDM-APP-GROUP","totalApps":3,"lastScanned":"2023-09-04T10:19:30.197"},{"appGroup":"IEP_Domain","totalApps":1974,"lastScanned":"2024-01-19T20:22:56.693"},{"appGroup":"Illingworth","totalApps":210,"lastScanned":"2024-01-20T02:44:24.43"},{"appGroup":"InLab","totalApps":1,"lastScanned":"2023-12-05T21:15:24.46"},{"appGroup":"LEAPFROG-EDC","totalApps":2,"lastScanned":"2023-06-15T11:20:39.927"},{"appGroup":"LEAPFROG-EDC-APP-GROUP","totalApps":3,"lastScanned":"2023-05-18T13:09:15.83"},{"appGroup":"Modal Digital","totalApps":1064,"lastScanned":"2024-01-19T20:39:05.89"},{"appGroup":"PreRISK","totalApps":21,"lastScanned":"2023-06-02T11:21:49.41"},{"appGroup":"PrincetonEarlyPhase","totalApps":8,"lastScanned":"2023-08-08T17:17:16.76"},{"appGroup":"PvHub","totalApps":621,"lastScanned":"2024-01-19T14:53:43.41"},{"appGroup":"RELTIO-MDM-APP-GROUP","totalApps":1,"lastScanned":"2023-05-05T10:25:54.923"},{"appGroup":"Rx-Data","totalApps":1,"lastScanned":"2023-02-08T11:00:22.187"},{"appGroup":"rxds-SNAP-code-scan","totalApps":526,"lastScanned":"2024-01-03T11:04:07.667"},{"appGroup":"SAFETY-DM-APP-GROUP","totalApps":2,"lastScanned":"2023-09-04T12:11:46.323"},{"appGroup":"SampleCheck","totalApps":1160,"lastScanned":"2024-01-19T15:45:33.287"},{"appGroup":"Seleris","totalApps":25,"lastScanned":"2024-01-17T18:33:24.343"},{"appGroup":"SHDM-APP-GROUP","totalApps":22,"lastScanned":"2023-12-13T11:50:11.09"},{"appGroup":"Sientra","totalApps":8,"lastScanned":"2023-08-23T14:37:50.723"},{"appGroup":"SponsorIntegrations","totalApps":23,"lastScanned":"2023-10-10T15:46:27.83"},{"appGroup":"SSU-SSA-APP-GROUP","totalApps":2,"lastScanned":"2023-06-21T13:24:41.407"},{"appGroup":"StudyKik","totalApps":14906,"lastScanned":"2024-01-20T02:51:14.18"},{"appGroup":"StudyKik-Global","totalApps":1528,"lastScanned":"2023-12-26T23:46:52.097"},{"appGroup":"SYNH-CHCUK","totalApps":3,"lastScanned":"2023-06-23T09:03:40.933"},{"appGroup":"SYNH-IntLoader4MCTMS","totalApps":26,"lastScanned":"2023-09-12T09:42:43.757"},{"appGroup":"SYNH-NIHToolboxService","totalApps":1,"lastScanned":"2023-07-12T12:46:11.543"},{"appGroup":"SYNOPSIS-APP-GROUP","totalApps":7,"lastScanned":"2023-05-18T03:15:52.34"},{"appGroup":"SynopsisConnect","totalApps":76,"lastScanned":"2023-07-03T08:04:32.707"},{"appGroup":"TrialEAS","totalApps":30,"lastScanned":"2023-07-11T13:26:05.94"},{"appGroup":"TrialEASNovo","totalApps":15,"lastScanned":"2023-11-15T14:37:13.58"}]
+[
+  {
+    "appGroup": "ACT",
+    "totalApps": 144,
+    "lastScanned": "2024-01-19T19:58:15.03"
+  },
+  {
+    "appGroup": "AI2",
+    "totalApps": 212,
+    "lastScanned": "2023-05-25T09:21:58.883"
+  },
+  {
+    "appGroup": "AppSecOSS",
+    "totalApps": 235,
+    "lastScanned": "2024-01-12T06:21:47.903"
+  },
+  {
+    "appGroup": "AZURE-LEAPFROG-APPLICATIONS",
+    "totalApps": 4,
+    "lastScanned": "2023-06-15T11:59:23.713"
+  },
+  {
+    "appGroup": "AZURE-LEAPFROG-APPLICATIONS-APP-GROUP",
+    "totalApps": 9,
+    "lastScanned": "2023-06-15T10:59:17.117"
+  },
+  {
+    "appGroup": "BoldSkyStudio",
+    "totalApps": 2,
+    "lastScanned": "2023-09-22T02:28:17.01"
+  },
+  {
+    "appGroup": "CDM-APP-GROUP",
+    "totalApps": 77,
+    "lastScanned": "2024-01-09T10:54:39.36"
+  },
+  {
+    "appGroup": "Commercial Data Lake",
+    "totalApps": 1,
+    "lastScanned": "2023-08-28T14:27:55.2"
+  },
+  {
+    "appGroup": "CORP-APP-GROUP",
+    "totalApps": 28,
+    "lastScanned": "2023-09-12T17:47:46.92"
+  },
+  {
+    "appGroup": "CRAForecasting",
+    "totalApps": 16,
+    "lastScanned": "2022-11-24T09:52:47.97"
+  },
+  {
+    "appGroup": "CreativeStudios",
+    "totalApps": 166,
+    "lastScanned": "2024-01-19T19:42:47.837"
+  },
+  {
+    "appGroup": "CustodianRequest",
+    "totalApps": 7,
+    "lastScanned": "2023-08-23T19:49:35.7"
+  },
+  {
+    "appGroup": "Databricks-GROUP",
+    "totalApps": 1,
+    "lastScanned": "2023-06-13T14:39:21.34"
+  },
+  {
+    "appGroup": "DataLitHub",
+    "totalApps": 4,
+    "lastScanned": "2023-12-15T15:31:27.373"
+  },
+  {
+    "appGroup": "DIH",
+    "totalApps": 4,
+    "lastScanned": "2023-08-07T10:34:52.673"
+  },
+  {
+    "appGroup": "DRM",
+    "totalApps": 33,
+    "lastScanned": "2024-01-16T14:48:07.563"
+  },
+  {
+    "appGroup": "EDM-APP-GROUP",
+    "totalApps": 1,
+    "lastScanned": "2023-05-05T10:22:14.67"
+  },
+  {
+    "appGroup": "EDTA File Transfer",
+    "totalApps": 19,
+    "lastScanned": "2023-07-28T15:43:46.083"
+  },
+  {
+    "appGroup": "Golden RCD",
+    "totalApps": 1,
+    "lastScanned": "2023-12-04T07:41:21.423"
+  },
+  {
+    "appGroup": "HR Analytics",
+    "totalApps": 13,
+    "lastScanned": "2022-11-18T09:20:53.67"
+  },
+  {
+    "appGroup": "ICDM-APP-GROUP",
+    "totalApps": 3,
+    "lastScanned": "2023-09-04T10:19:30.197"
+  },
+  {
+    "appGroup": "IEP_Domain",
+    "totalApps": 1974,
+    "lastScanned": "2024-01-19T20:22:56.693"
+  },
+  {
+    "appGroup": "Illingworth",
+    "totalApps": 210,
+    "lastScanned": "2024-01-20T02:44:24.43"
+  },
+  {
+    "appGroup": "InLab",
+    "totalApps": 1,
+    "lastScanned": "2023-12-05T21:15:24.46"
+  },
+  {
+    "appGroup": "LEAPFROG-EDC",
+    "totalApps": 2,
+    "lastScanned": "2023-06-15T11:20:39.927"
+  },
+  {
+    "appGroup": "LEAPFROG-EDC-APP-GROUP",
+    "totalApps": 3,
+    "lastScanned": "2023-05-18T13:09:15.83"
+  },
+  {
+    "appGroup": "Modal Digital",
+    "totalApps": 1064,
+    "lastScanned": "2024-01-19T20:39:05.89"
+  },
+  {
+    "appGroup": "PreRISK",
+    "totalApps": 21,
+    "lastScanned": "2023-06-02T11:21:49.41"
+  },
+  {
+    "appGroup": "PrincetonEarlyPhase",
+    "totalApps": 8,
+    "lastScanned": "2023-08-08T17:17:16.76"
+  },
+  {
+    "appGroup": "PvHub",
+    "totalApps": 621,
+    "lastScanned": "2024-01-19T14:53:43.41"
+  },
+  {
+    "appGroup": "RELTIO-MDM-APP-GROUP",
+    "totalApps": 1,
+    "lastScanned": "2023-05-05T10:25:54.923"
+  },
+  {
+    "appGroup": "Rx-Data",
+    "totalApps": 1,
+    "lastScanned": "2023-02-08T11:00:22.187"
+  },
+  {
+    "appGroup": "rxds-SNAP-code-scan",
+    "totalApps": 526,
+    "lastScanned": "2024-01-03T11:04:07.667"
+  },
+  {
+    "appGroup": "SAFETY-DM-APP-GROUP",
+    "totalApps": 2,
+    "lastScanned": "2023-09-04T12:11:46.323"
+  },
+  {
+    "appGroup": "SampleCheck",
+    "totalApps": 1160,
+    "lastScanned": "2024-01-19T15:45:33.287"
+  },
+  {
+    "appGroup": "Seleris",
+    "totalApps": 25,
+    "lastScanned": "2024-01-17T18:33:24.343"
+  },
+  {
+    "appGroup": "SHDM-APP-GROUP",
+    "totalApps": 22,
+    "lastScanned": "2023-12-13T11:50:11.09"
+  },
+  {
+    "appGroup": "Sientra",
+    "totalApps": 8,
+    "lastScanned": "2023-08-23T14:37:50.723"
+  },
+  {
+    "appGroup": "SponsorIntegrations",
+    "totalApps": 23,
+    "lastScanned": "2023-10-10T15:46:27.83"
+  },
+  {
+    "appGroup": "SSU-SSA-APP-GROUP",
+    "totalApps": 2,
+    "lastScanned": "2023-06-21T13:24:41.407"
+  },
+  {
+    "appGroup": "StudyKik",
+    "totalApps": 14906,
+    "lastScanned": "2024-01-20T02:51:14.18"
+  },
+  {
+    "appGroup": "StudyKik-Global",
+    "totalApps": 1528,
+    "lastScanned": "2023-12-26T23:46:52.097"
+  },
+  {
+    "appGroup": "SYNH-CHCUK",
+    "totalApps": 3,
+    "lastScanned": "2023-06-23T09:03:40.933"
+  },
+  {
+    "appGroup": "SYNH-IntLoader4MCTMS",
+    "totalApps": 26,
+    "lastScanned": "2023-09-12T09:42:43.757"
+  },
+  {
+    "appGroup": "SYNH-NIHToolboxService",
+    "totalApps": 1,
+    "lastScanned": "2023-07-12T12:46:11.543"
+  },
+  {
+    "appGroup": "SYNOPSIS-APP-GROUP",
+    "totalApps": 7,
+    "lastScanned": "2023-05-18T03:15:52.34"
+  },
+  {
+    "appGroup": "SynopsisConnect",
+    "totalApps": 76,
+    "lastScanned": "2023-07-03T08:04:32.707"
+  },
+  {
+    "appGroup": "TrialEAS",
+    "totalApps": 30,
+    "lastScanned": "2023-07-11T13:26:05.94"
+  },
+  {
+    "appGroup": "TrialEASNovo",
+    "totalApps": 15,
+    "lastScanned": "2023-11-15T14:37:13.58"
+  }
+]

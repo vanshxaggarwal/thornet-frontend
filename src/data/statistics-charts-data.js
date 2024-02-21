@@ -33,8 +33,11 @@ async function fetchData() {
         //return a;
         //return { "data": a, "cache_time": response.headers.get('date') };
     } catch (error) {
-        console.error("Error fetching data:", error);
-        return null;
+        if (error) {
+            const response = await fetch("/data/resolved.customization");
+            const data = await response.json();
+            return data;
+        }
     }
 }
 var data = await fetchData();
@@ -71,8 +74,11 @@ async function fetchData2() {
         return data;
         //return { "data": a, "cache_time": response.headers.get('date') };
     } catch (error) {
-        console.error("Error fetching data:", error);
-        return null;
+        if (error) {
+            const response = await fetch("/data/opened.customization");
+            const data = await response.json();
+            return data;
+        }
     }
 }
 var data2 = await fetchData2();
