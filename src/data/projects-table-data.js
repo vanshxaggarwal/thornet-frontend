@@ -29,20 +29,9 @@ export const projectsTableData = data.map(s => ({
     "days": s.num_of_days,
     "severity": s.severity,
     "last_scanned": new Date(s.last_scanned).toLocaleDateString(),
-    "finalDate": new Date(s.last_scanned).addDays(((s.severity == 'critical') ? 30
-        : (s.severity == 'high') ? 60
-            : (s.severity == 'medium') ? 90 : 180)).toLocaleDateString(),
+    "finalDate": new Date(s.last_scanned).addDays(((s.severity == 'critical') ? 15
+        : (s.severity == 'high') ? 30
+            : (s.severity == 'medium') ? 45 : 90)).toString(),
 })).filter(s => new Date(s.finalDate) >= Date.now());
 
 export default projectsTableData;
-
-//data.map(s => ({
-//    "groupName": s.group_name,
-//    "count": s.total_app,
-//    "days": s.num_of_days,
-//    "severity": s.severity,
-//    "last_scanned": s.last_scanned,
-//    "remaining_num_of_days": ((s.severity == 'critical') ? 7
-//        : (s.severity == 'high') ? 14
-//            : (s.severity == 'medium') ? 30 : 90)
-//}));

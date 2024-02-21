@@ -68,7 +68,7 @@ export function Home() {
                     ))}
                 </div>
                 <div className="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-3 overflow-hidden">
-                    <Card Style="height:25%" className="overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm">
+                    <Card Style="height:550px" className="overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm">
                         <CardHeader
                             floated={false}
                             shadow={false}
@@ -108,7 +108,7 @@ export function Home() {
                             <table className="w-full min-w-[640px] table-auto">
                                 <thead>
                                     <tr>
-                                        {["App Group", "Total Apps with impending breaches", "Days left for earliest breach", "Last Scanned On", "Nearest Date to breaches", "Severity",].map(
+                                        {["App Group", "Total Apps with impending breaches", "Days left for earliest breach", "Detection Date", "Nearest Date to breaches", "Severity",].map(
                                             (el) => (
                                                 <th
                                                     key={el}
@@ -188,13 +188,13 @@ export function Home() {
                                                             variant="small"
                                                             className="text-xs font-medium text-blue-gray-600"
                                                         >
-                                                            {finalDate}
+                                                            { new Date(finalDate).toLocaleDateString() }
                                                         </Typography>
                                                     </td>
                                                     <td className={className}>
                                                         <Typography
                                                             variant="small"
-                                                            className={"text-xs font-medium " + severity == "critical" ? "text-red-500" : severity == "high" ? "text-yellow-500" : severity == "medium" ? "text-[#f5a623]" : "text-grey-500"}
+                                                            className={severity == "critical" ? "text-xs font-medium text-red-500" : severity == "high" ? "text-xs font-medium text-[#35a0da]" : severity == "medium" ? "text-xs font-medium text-[#f5a623]" : "text-xs font-medium text-[#50aa54]"}
                                                         >
                                                             {severity}
                                                         </Typography>
@@ -207,7 +207,7 @@ export function Home() {
                             </table>
                         </CardBody>
                     </Card>
-                    <Card Style="height:25%" className="border border-blue-gray-100 shadow-sm">
+                    <Card Style="height:550px" className="border border-blue-gray-100 shadow-sm">
                         <CardHeader
                             floated={false}
                             shadow={false}

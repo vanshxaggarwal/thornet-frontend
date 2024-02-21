@@ -20,7 +20,7 @@ const websiteViewsChart = {
     },
     xaxis: {
       ...chartsConfig.xaxis,
-      categories: ["M", "T", "W", "T", "F", "S", "S"],
+        categories: ["AUG-2023", "SEP-2023", "OCT-2023", "NOV-2023", "DEC-2023", "JAN-2024", "FEB-2024"],
     },
   },
 };

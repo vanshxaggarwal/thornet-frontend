@@ -19,10 +19,11 @@ export function Dashboard() {
       <Sidenav
         routes={routes}
         brandImg={
-           "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Syneos_Health_logo.svg/220px-Syneos_Health_logo.svg.png"
+           "../img/SyneosHealth.png"
         }
       />
-      <div className="p-4 xl:ml-80">
+          {/*xl:ml-80*/}
+          <div className="p-4" Style="margin-left:16rem;">
         <DashboardNavbar />
         {/*<Configurator />*/}
         {/*<IconButton*/}
