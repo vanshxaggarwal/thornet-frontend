@@ -26,3 +26,4 @@ dist-ssr
 *.sln
 *.sw?
 /.vs
+/generate-react-cli.json
