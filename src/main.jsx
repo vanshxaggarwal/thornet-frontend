@@ -17,6 +17,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import { MaterialTailwindControllerProvider } from "@/context";
 import "../public/css/tailwind.css";
 import "../public/css/style.css";
+import "../public/js/utils.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

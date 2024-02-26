@@ -2,8 +2,7 @@ import {
     ArrowPathIcon,
 } from "@heroicons/react/24/solid";
 
-async function fetchData() {
-    debugger;
+async function fetchData() {    
     try {
         //debugger;
         const response = await fetch("https://localhost:7210/api/dashboard/outdatedscans");        
