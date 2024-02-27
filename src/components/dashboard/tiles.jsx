@@ -16,8 +16,7 @@ export const Tiles = () => {
             {
                 color: "red",
                 icon: ExclamationTriangleIcon,
-                title: "Critical",
-                value: "2312",
+                title: "Critical",                
                 footer: {
                     color: "text-green-500",
                     value: "+1%",
@@ -27,8 +26,7 @@ export const Tiles = () => {
             {
                 color: "orange",
                 icon: ArrowUpCircleIcon,
-                title: "High",
-                value: "5,300",
+                title: "High",                
                 footer: {
                     color: "text-green-500",
                     value: "+3%",
@@ -39,7 +37,6 @@ export const Tiles = () => {
                 color: "amber",
                 icon: ExclamationCircleIcon,
                 title: "Medium",
-                value: "462",
                 footer: {
                     color: "text-red-500",
                     value: "-2%",
@@ -49,8 +46,7 @@ export const Tiles = () => {
             {
                 color: "green",
                 icon: ArrowDownCircleIcon,
-                title: "Low",
-                value: "10430",
+                title: "Low",                
                 footer: {
                     color: "text-green-500",
                     value: "+5%",
@@ -83,7 +79,7 @@ export const Tiles = () => {
          fetchData();      
     }, []);
     return (
-        <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className={tilesData == null ? "animate-pulse mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4" : "mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4"} >
             {tilesData && tilesData.map(({ icon, title, footer, ...rest }) => (
                 <StatisticsCard
                     key={title}

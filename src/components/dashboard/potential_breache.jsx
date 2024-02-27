@@ -10,7 +10,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 
 export const PotentialBreache = () => {
-    const [projectsTableData, setData] = useState(false);
+    const [potential_data, setData] = useState(null);
     useEffect(() => {
         const fetchData = async () => {            
             try {
@@ -45,7 +45,7 @@ export const PotentialBreache = () => {
         fetchData();
     }, []);
     return (
-        <Card Style="height:550px" className="overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm">
+        <Card Style="height:550px" className={potential_data == null ? "animate-pulse overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm" : "overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm"}>
             <CardHeader
                 floated={false}
                 shadow={false}
@@ -61,7 +61,7 @@ export const PotentialBreache = () => {
                         className="flex items-center gap-1 font-normal text-blue-gray-600"
                     >
                         <CheckCircleIcon strokeWidth={3} className="h-4 w-4 text-blue-gray-200" />
-                        <strong>{projectsTableData && projectsTableData.filter(s => new Date(s.finalDate).getMonth() == new Date().getMonth()).length} breaches</strong> this month
+                        <strong>{potential_data && potential_data.filter(s => new Date(s.finalDate).getMonth() == new Date().getMonth()).length} breaches</strong> this month
                     </Typography>
                 </div>
             </CardHeader>
@@ -87,9 +87,9 @@ export const PotentialBreache = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {projectsTableData && projectsTableData.map(
+                        {potential_data && potential_data.map(
                             ({ groupName, count, days, last_scanned, finalDate, severity }, key) => {
-                                const className = `py-3 px-5 ${key === projectsTableData.length - 1
+                                const className = `py-3 px-5 ${key === potential_data.length - 1
                                     ? ""
                                     : "border-b border-blue-gray-50"
                                     }`;
