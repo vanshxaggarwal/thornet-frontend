@@ -100,8 +100,5 @@ export const OutdatedScans = () => {
         </Card>
     )
 }
-//OutdatedScans.propTypes = {};
-
-//OutdatedScans.defaultProps = {};
 
 export default OutdatedScans;
