@@ -57,14 +57,15 @@ export const Tiles = () => {
         async function update_tiles_count(data) {            
             if (data) {
                 data2[0].value = data.find(obj => obj.key === 'critical')?.count;
-                data2[1].value = data.find(obj => obj.key === 'medium')?.count;
-                data2[2].value = data.find(obj => obj.key === 'high')?.count;
+                data2[1].value = data.find(obj => obj.key === 'high')?.count;
+                data2[2].value = data.find(obj => obj.key === 'medium')?.count;               
                 data2[3].value = data.find(obj => obj.key === 'low')?.count;
             }
         }        
         const fetchData = async () => {
             try {
-                const response = await fetch("https://localhost:7210/api/Dashboard/tiles");
+                let url = "https://localhost:7210/api/Dashboard/tiles";
+                const response = await fetch((JSON.parse(localStorage.getItem("isProd")) ? url + "?branch=main%2Cmaster" : url));
                 const data = await response.json();
                 await update_tiles_count(data);
                 setData(data2);
