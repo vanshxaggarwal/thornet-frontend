@@ -4,16 +4,14 @@ import {
 } from "@material-tailwind/react";
 import {
     ExclamationTriangleIcon,
-    ExclamationCircleIcon,
-    ArrowUpCircleIcon,
-    ArrowDownCircleIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/outline";
 import { StatisticsCard } from "@/widgets/cards";
 export const Tiles = () => {    
     const [tilesData, setData] = useState(false);
     useEffect(() => {
         const data2 = [
             {
+                
                 color: "red",
                 icon: ExclamationTriangleIcon,
                 title: "Critical",                
@@ -25,7 +23,7 @@ export const Tiles = () => {
             },
             {
                 color: "orange",
-                icon: ArrowUpCircleIcon,
+                icon: ExclamationTriangleIcon,
                 title: "High",                
                 footer: {
                     color: "text-green-500",
@@ -35,7 +33,7 @@ export const Tiles = () => {
             },
             {
                 color: "amber",
-                icon: ExclamationCircleIcon,
+                icon: ExclamationTriangleIcon,
                 title: "Medium",
                 footer: {
                     color: "text-red-500",
@@ -45,7 +43,7 @@ export const Tiles = () => {
             },
             {
                 color: "green",
-                icon: ArrowDownCircleIcon,
+                icon: ExclamationTriangleIcon,
                 title: "Low",                
                 footer: {
                     color: "text-green-500",
@@ -70,7 +68,7 @@ export const Tiles = () => {
                 await update_tiles_count(data);
                 setData(data2);
             } catch (error) {
-                const response = await fetch("/data/Tiles.customization");
+                const response = await fetch("/data/tiles.customization");
                 const data = await response.json();
                 await update_tiles_count(data);
                 setData(data2);
