@@ -13,10 +13,10 @@ export const Tables = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://localhost:7210/api/Application/AppGroupComplianceData");
+                const response = await fetch("https://localhost:7210/api/Application/AppGroupComplianceData");                
                 const data = (await response.json()).map(s => ({
-                    "GroupName": s.groupname,
-                    "AppCount": '${s.app_count} apps',
+                    "GroupName": s.group_name,
+                    "AppCount": s.app_count + " Apps",
                     "severity": ["critical", "high", "medium", "low"],
                     "status": [s.critical, s.high, s.medium, s.low],
                     "sla_status": "Within SLA",               
