@@ -45,7 +45,7 @@ export const PotentialBreache = () => {
         fetchData();
     }, []);
     return (
-        <Card Style="height:550px" className={potential_data == null ? "animate-pulse overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm" : "overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm"}>
+        <Card className={potential_data == null ? "animate-pulse overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm h-[550px]" : "overflow-hidden xl:col-span-2 border border-blue-gray-100 shadow-sm h-[550px]"}>
             <CardHeader
                 floated={false}
                 shadow={false}

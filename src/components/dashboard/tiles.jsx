@@ -62,7 +62,7 @@ export const Tiles = () => {
         }        
         const fetchData = async () => {
             try {
-                let url = "https://localhost:7210/api/Dashboard/tiles";
+                let url = "https://localhost:7210/api/Dashboard/tiles";                
                 const response = await fetch((JSON.parse(localStorage.getItem("isProd")) ? url + "?branch=main%2Cmaster" : url));
                 const data = await response.json();
                 await update_tiles_count(data);

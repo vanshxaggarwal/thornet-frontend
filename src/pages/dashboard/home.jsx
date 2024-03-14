@@ -8,10 +8,9 @@ export function Home() {
         <div>
             <div className="mt-12 uppercase">                
                 <Tiles/>
-                <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
-                    <CloseVuln/>
-                    <OpenVuln/>
-                    <OpenVuln/>
+                <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-2">                    
+                    <OpenVuln />
+                    <CloseVuln />
                 </div>
                 <div className="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-3 overflow-hidden">
                     <PotentialBreache/>

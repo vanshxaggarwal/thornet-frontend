@@ -28,7 +28,11 @@ export const routes = [
       //  name: "profile",
       //  path: "/profile",
       //  element: <Profile />,
-      //},
+        //},
+      {        
+        name: "reload",
+        path: "/reload"
+      },
       {
         icon: <TableCellsIcon {...icon} />,
         name: "Applications",

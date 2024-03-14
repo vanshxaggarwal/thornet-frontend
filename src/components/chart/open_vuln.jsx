@@ -3,21 +3,18 @@ import {
 } from "@material-tailwind/react";
 import { chartsConfig } from "@/configs";
 import { StatisticsChart } from "@/widgets/charts";
-import { ClockIcon } from "@heroicons/react/24/solid";
-
 import React, { useState, useEffect } from 'react';
 export const OpenVuln = () => {
   const [chartData, setData] = useState(false);
-  useEffect(() => {
-      let data = [];
-      async function fetchData() {
+  useEffect(() => {      
+      async function fetchData() {          
           try {
               const response = await fetch("https://localhost:7210/api/Dashboard/opened");
-              data = await response.json();
-              data = [{
+              const data = await response.json();
+              const mappeddata = [{
                   color: "white",
-                  title: "SLA",
-                  description: "SLA Compliance Trend",
+                  title: "OPEN VULNERABILITY TREND",
+                  description: "OPEN VULNERABILITY TREND",
                   footer: "updated 8 min ago",
                   chart: {
                       type: "line",
@@ -25,12 +22,12 @@ export const OpenVuln = () => {
                       series: [
                           {
                               name: "Vulnerabilities",
-                              data: chartData.map(s => s.total),
+                              data: data.map(s => s.total),
                           },
                       ],
                       options: {
                           ...chartsConfig,
-                          colors: ["#0288d1"],
+                          colors: ["#388e3c"],
                           stroke: {
                               lineCap: "round",
                           },
@@ -39,17 +36,17 @@ export const OpenVuln = () => {
                           },
                           xaxis: {
                               ...chartsConfig.xaxis,
-                              categories: chartData.map(s => s.month),
+                              categories: data.map(s => s.month),
                           },
                       },
                   },
               }]
-              setData(data);
+              setData(mappeddata);
           } catch (error) {
               if (error) {
                   const response = await fetch("/data/opened.customization");
-                  data = await response.json();
-                  data = [{
+                  const data = await response.json();
+                  const mappeddata = [{
                       color: "white",
                       title: "SLA",
                       description: "Open Vulnerability Trend",
@@ -79,7 +76,7 @@ export const OpenVuln = () => {
                           },
                       },
                   }]
-                  setData(data);
+                  setData(mappeddata);
               }
           }
       }
@@ -97,8 +94,8 @@ export const OpenVuln = () => {
                           className="block items-center font-normal text-blue-gray-600"
                       >
                           <span className="flex float-left">{props.description}</span>
-                          <span className="flex float-right"><ClockIcon strokeWidth={2} className="h-4 w-4 text-blue-gray-400" />
-                              &nbsp;{props.footer}</span>
+                          {/*<span className="flex float-right"><ClockIcon strokeWidth={2} className="h-4 w-4 text-blue-gray-400" />*/}
+                          {/*    &nbsp;{props.footer}</span>*/}
                       </Typography>
                   }
               />

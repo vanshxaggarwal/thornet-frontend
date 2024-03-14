@@ -88,28 +88,28 @@ export const Tables = () => {
                                                 <Typography className="text-xs font-semibold text-blue-gray-600">
                                                     <table>
                                                         <tr>
-                                                            <td Style="vertical-align: bottom;">
+                                                            <td className="align-bottom">
                                                                 <div className={severity[0]} style={{ height: status[0] }}>
                                                                     <div className="text-botton">
                                                                         {status[0]}
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td Style="vertical-align: bottom;">
+                                                            <td className="align-bottom">
                                                                 <div className={severity[1]} style={{ height: status[1] }}>
                                                                     <div className="text-botton">
                                                                         {status[1]}
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td Style="vertical-align: bottom;">
+                                                            <td className="align-bottom">
                                                                 <div className={severity[2]} style={{ height: status[2] }}>
                                                                     <div className="text-botton">
                                                                         {status[2]}
                                                                     </div>
                                                                 </div>
                                                             </td>
-                                                            <td Style="vertical-align: bottom;">
+                                                            <td className="align-bottom">
                                                                 <div className={severity[3]} style={{ height: status[3] }}>
                                                                     <div className="text-botton">
                                                                         {status[3]}

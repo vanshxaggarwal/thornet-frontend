@@ -30,8 +30,7 @@ export function Auth() {
       path: "/auth/sign-in",
       icon: ArrowRightOnRectangleIcon,
     },
-  ];
-
+    ];
   return (
     <div className="relative min-h-screen w-full">
       <Routes>

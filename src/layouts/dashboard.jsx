@@ -12,18 +12,20 @@ import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
 
 export function Dashboard() {
   const [controller, dispatch] = useMaterialTailwindController();
-  const { sidenavType } = controller;
-
+    const { sidenavType } = controller;    
   return (
     <div className="min-h-screen bg-blue-gray-50/50">
       <Sidenav
-        routes={routes}
+              routes={routes.map(item => ({
+                  ...item,
+                  pages: item.pages.filter(page => page.name !== "reload")
+              }))}
         brandImg={
            "../img/SyneosHealth.png"
         }
       />
           {/*xl:ml-80*/}
-          <div className="p-4" Style="margin-left:16rem;">
+          <div className="p-4 ml-[16rem]">
         <DashboardNavbar />
         <Settings />
         <IconButton

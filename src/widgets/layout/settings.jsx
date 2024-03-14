@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
 import {    
     IconButton,
     Switch,
@@ -10,36 +11,10 @@ import {
     setOpenConfigurator,
     setProdMode
 } from "@/context";
-
-function formatNumber(number, decPlaces) {
-    decPlaces = Math.pow(10, decPlaces);
-
-    const abbrev = ["K", "M", "B", "T"];
-
-    for (let i = abbrev.length - 1; i >= 0; i--) {
-        var size = Math.pow(10, (i + 1) * 3);
-
-        if (size <= number) {
-            number = Math.round((number * decPlaces) / size) / decPlaces;
-
-            if (number == 1000 && i < abbrev.length - 1) {
-                number = 1;
-                i++;
-            }
-
-            number += abbrev[i];
-
-            break;
-        }
-    }
-
-    return number;
-}
-
-export function Settings() {
+export function Settings() {    
+    const navigate = useNavigate();
     const [controller, dispatch] = useMaterialTailwindController();
-    const { openConfigurator, isProd } =
-        controller;
+    const { openConfigurator, isProd } = controller;
     return (
         <aside
             className={`fixed top-0 right-0 z-50 h-screen w-96 bg-white px-2.5 shadow-lg transition-transform duration-300 ${openConfigurator ? "translate-x-0" : "translate-x-96"
@@ -64,11 +39,15 @@ export function Settings() {
                     <div className="flex items-center justify-between py-5">
                         <Typography variant="h6" color="blue-gray">
                             Production Mode
-                        </Typography>
+                        </Typography>                        
                         <Switch
                             id="navbar-fixed"
                             checked={ JSON.parse(localStorage.getItem("isProd")) }
-                            onChange={() => setProdMode(dispatch, !isProd)}
+                            onChange={() => {
+                                setProdMode(dispatch, !isProd);                                
+                                navigate("/reload");
+                                setTimeout(() => { navigate("/dashboard/home"); }, 100);                                
+                            }}
                         />
                     </div>
                 </div>                
