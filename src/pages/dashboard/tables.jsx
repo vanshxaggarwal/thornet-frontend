@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import {
     Card,
     CardHeader,
@@ -5,9 +6,30 @@ import {
     Typography,
     Chip,
 } from "@material-tailwind/react";
-import { authorsTableData } from "@/data";
+import { authorsTableData , } from "@/data";
 
-export function Tables() {
+export const Tables = () => {
+    const [AppGrpData, setData] = useState(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("https://localhost:7210/api/Application/AppGroupCompliance");
+                const data = (await response.json()).map(s => ({
+                    "GroupName": s.groupname,
+                    "AppCount": '${s.app_count} apps',
+                    "status": [s.critical, s.high, s.medium, s.low],
+                    "sla_status": "Within SLA",               
+                    "Last_scanned_date": new Date(s.last_scanned_date).toLocaleDateString()
+                }));
+                data.sort((a, b) => b.count - a.count); // sort by descending App Count 
+                setData(data);
+            }
+            catch{
+                console.log("Error fetching AppGrp Compliance Data");
+            }
+        };
+        fetchData();
+    }, []);
     return (
         <div className="mt-12 mb-8 flex flex-col gap-12">
             <Card>
@@ -36,15 +58,15 @@ export function Tables() {
                             </tr>
                         </thead>
                         <tbody>
-                            {authorsTableData.map(
-                                ({ name, email, job, status, online, date }, key) => {
+                            {AppGrpData && AppGrpData.map(
+                                ({ GroupName, AppCount, status, sla_status, Last_scanned_date }, key) => {
                                     const className = `py-3 px-5 ${key === authorsTableData.length - 1
                                             ? ""
                                             : "border-b border-blue-gray-50"
                                         }`;
 
                                     return (
-                                        <tr key={name}>
+                                        <tr key={GroupName}>
                                             <td className={className}>
                                                 <div className="flex items-center gap-4">
                                                     <div>
@@ -53,10 +75,10 @@ export function Tables() {
                                                             color="blue-gray"
                                                             className="font-semibold"
                                                         >
-                                                            {name}
+                                                            {GroupName}
                                                         </Typography>
                                                         <Typography className="text-xs font-normal text-blue-gray-500">
-                                                            {email}
+                                                            {AppCount}
                                                         </Typography>
                                                     </div>
                                                 </div>
@@ -100,14 +122,14 @@ export function Tables() {
                                             <td className={className}>
                                                 <Chip
                                                     variant="gradient"
-                                                    color={online ? "green" : "red"}
-                                                    value={online ? "Within SLA" : "SLA Breached"}
+                                                    color={sla_status ? "green" : "red"}
+                                                    value={sla_status ? "Within SLA" : "SLA Breached"}
                                                     className="py-0.5 px-2 text-[11px] font-medium w-fit"
                                                 />
                                             </td>
                                             <td className={className}>
                                                 <Typography className="text-xs font-semibold text-blue-gray-600">
-                                                    {date}
+                                                    {Last_scanned_date}
                                                 </Typography>
                                             </td>
                                             <td className={className}>
