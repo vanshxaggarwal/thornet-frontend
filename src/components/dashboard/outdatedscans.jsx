@@ -9,7 +9,7 @@ import {
 import {
     ArrowUpIcon, ArrowPathIcon
 } from "@heroicons/react/24/outline";
-
+import { app_config } from "@/configs";
 export const OutdatedScans = () => {
     const [outdatedscandata, setData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -19,8 +19,10 @@ export const OutdatedScans = () => {
     }
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch("https://localhost:7210/api/dashboard/outdatedscans");
+            try {                
+                const fetch_url = (app_config.use_json == false) ? app_config.api_base + "/api/Dashboard/outdatedscans" : "/data/outdatedscans.customization"
+                const response = await fetch(fetch_url);
+
                 const data = (await response.json()).map(s => ({
                     icon: ArrowPathIcon,
                     color: "text-blue-gray-300",
@@ -29,19 +31,7 @@ export const OutdatedScans = () => {
                     "lastScanned": new Date(s.lastScanned).toLocaleDateString()
                 }));
                 setData(data);
-            } catch (error) {
-                const response = await fetch("/data/outdatedscans.customization");
-                const data = (await response.json()).map(s => ({
-                    "groupName": s.group_name,
-                    "count": s.total_app,
-                    "days": s.num_of_days,
-                    "severity": s.severity,
-                    "last_scanned": new Date(s.last_scanned).toLocaleDateString(),
-                    "finalDate": new Date(s.last_scanned).addDays(((s.severity == 'critical') ? 15
-                        : (s.severity == 'high') ? 30
-                            : (s.severity == 'medium') ? 45 : 90)).toString(),
-                })).filter(s => new Date(s.finalDate) >= Date.now());
-                setData(data);                
+            } catch (error) {              
             }
         };
         fetchData();

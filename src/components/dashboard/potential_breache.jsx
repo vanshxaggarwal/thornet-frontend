@@ -6,7 +6,7 @@ import {
     CardBody
 } from "@material-tailwind/react";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
-
+import { app_config } from "@/configs";
 
 
 export const PotentialBreache = () => {
@@ -14,7 +14,8 @@ export const PotentialBreache = () => {
     useEffect(() => {
         const fetchData = async () => {            
             try {
-                const response = await fetch("https://localhost:7210/api/Dashboard/potential_breache");
+                const fetch_url = (app_config.use_json == false) ? app_config.api_base + "/api/Dashboard/potential_breache" : "/data/potential_breache.customization"
+                const response = await fetch(fetch_url);
                 const data = (await response.json()).map(s => ({
                     "groupName": s.group_name,
                     "count": s.total_app,
@@ -26,19 +27,7 @@ export const PotentialBreache = () => {
                             : (s.severity == 'medium') ? 45 : 90)).toString(),
                 })).filter(s => new Date(s.finalDate) >= Date.now());
                 setData(data);
-            } catch (error) {
-                const response = await fetch("/data/potential_breache.customization");
-                const data = (await response.json()).map(s => ({
-                    "groupName": s.group_name,
-                    "count": s.total_app,
-                    "days": s.num_of_days,
-                    "severity": s.severity,
-                    "last_scanned": new Date(s.last_scanned).toLocaleDateString(),
-                    "finalDate": new Date(s.last_scanned).addDays(((s.severity == 'critical') ? 15
-                        : (s.severity == 'high') ? 30
-                            : (s.severity == 'medium') ? 45 : 90)).toString(),
-                })).filter(s => new Date(s.finalDate) >= Date.now());
-                setData(data);                
+            } catch (error) {               
             }            
         };
 

@@ -1,15 +1,16 @@
 import {
   Typography
 } from "@material-tailwind/react";
-import { chartsConfig } from "@/configs";
+import { chartsConfig, app_config } from "@/configs";
 import { StatisticsChart } from "@/widgets/charts";
 import React, { useState, useEffect } from 'react';
 export const OpenVuln = () => {
-  const [chartData, setData] = useState(false);
+    const [chartData, setData] = useState(false);    
   useEffect(() => {      
       async function fetchData() {          
           try {
-              const response = await fetch("https://localhost:7210/api/Dashboard/opened");
+              const fetch_url = (app_config.use_json == false) ? app_config.api_base + "/api/Dashboard/opened" : "/data/opened.customization"
+              const response = await fetch(fetch_url);
               const data = await response.json();
               const mappeddata = [{
                   color: "white",
@@ -43,41 +44,6 @@ export const OpenVuln = () => {
               }]
               setData(mappeddata);
           } catch (error) {
-              if (error) {
-                  const response = await fetch("/data/opened.customization");
-                  const data = await response.json();
-                  const mappeddata = [{
-                      color: "white",
-                      title: "SLA",
-                      description: "Open Vulnerability Trend",
-                      footer: "updated 8 min ago",
-                      chart: {
-                          type: "line",
-                          height: 300,
-                          series: [
-                              {
-                                  name: "Vulnerabilities",
-                                  data: data.map(s => s.total),
-                              },
-                          ],
-                          options: {
-                              ...chartsConfig,
-                              colors: ["#388e3c"],
-                              stroke: {
-                                  lineCap: "round",
-                              },
-                              markers: {
-                                  size: 5,
-                              },
-                              xaxis: {
-                                  ...chartsConfig.xaxis,
-                                  categories: data.map(s => s.month),
-                              },
-                          },
-                      },
-                  }]
-                  setData(mappeddata);
-              }
           }
       }
       fetchData();       
