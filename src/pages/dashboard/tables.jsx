@@ -13,10 +13,11 @@ export const Tables = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://localhost:7210/api/Application/AppGroupCompliance");
+                const response = await fetch("https://localhost:7210/api/Application/AppGroupComplianceData");
                 const data = (await response.json()).map(s => ({
                     "GroupName": s.groupname,
                     "AppCount": '${s.app_count} apps',
+                    "severity": ["critical", "high", "medium", "low"],
                     "status": [s.critical, s.high, s.medium, s.low],
                     "sla_status": "Within SLA",               
                     "Last_scanned_date": new Date(s.last_scanned_date).toLocaleDateString()
@@ -59,7 +60,7 @@ export const Tables = () => {
                         </thead>
                         <tbody>
                             {AppGrpData && AppGrpData.map(
-                                ({ GroupName, AppCount, status, sla_status, Last_scanned_date }, key) => {
+                                ({ GroupName, AppCount, status, sla_status, severity, Last_scanned_date }, key) => {
                                     const className = `py-3 px-5 ${key === authorsTableData.length - 1
                                             ? ""
                                             : "border-b border-blue-gray-50"
@@ -88,28 +89,28 @@ export const Tables = () => {
                                                     <table>
                                                         <tr>
                                                             <td Style="vertical-align: bottom;">
-                                                                <div className={job[0]} style={{ height: status[0] }}>
+                                                                <div className={severity[0]} style={{ height: status[0] }}>
                                                                     <div className="text-botton">
                                                                         {status[0]}
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                             <td Style="vertical-align: bottom;">
-                                                                <div className={job[1]} style={{ height: status[1] }}>
+                                                                <div className={severity[1]} style={{ height: status[1] }}>
                                                                     <div className="text-botton">
                                                                         {status[1]}
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                             <td Style="vertical-align: bottom;">
-                                                                <div className={job[2]} style={{ height: status[2] }}>
+                                                                <div className={severity[2]} style={{ height: status[2] }}>
                                                                     <div className="text-botton">
                                                                         {status[2]}
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                             <td Style="vertical-align: bottom;">
-                                                                <div className={job[3]} style={{ height: status[3] }}>
+                                                                <div className={severity[3]} style={{ height: status[3] }}>
                                                                     <div className="text-botton">
                                                                         {status[3]}
                                                                     </div>
