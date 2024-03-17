@@ -22,9 +22,9 @@ export const PotentialBreache = () => {
                     "days": s.num_of_days,
                     "severity": s.severity,
                     "last_scanned": new Date(s.last_scanned).toLocaleDateString(),
-                    "finalDate": new Date(s.last_scanned).addDays(((s.severity == 'critical') ? 15
+                    "finalDate": new Date(s.last_scanned).addDays(((s.severity == 'critical') ? 14
                         : (s.severity == 'high') ? 30
-                            : (s.severity == 'medium') ? 45 : 90)).toString(),
+                            : (s.severity == 'medium') ? 60 : 90)).toString(),
                 })).filter(s => new Date(s.finalDate) >= Date.now());
                 setData(data);
             } catch (error) {               

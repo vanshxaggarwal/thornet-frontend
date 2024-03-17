@@ -38,7 +38,7 @@ export function Settings() {
                     <hr />
                     <div className="flex items-center justify-between py-5">
                         <Typography variant="h6" color="blue-gray">
-                            Production Mode
+                            Production Only
                         </Typography>                        
                         <Switch
                             id="navbar-fixed"
