@@ -20,6 +20,14 @@ export const ResolvedVulnAndSeverity = () => {
                   chart: {
                       type: "line",
                       height: 400,
+                      zoom: {
+                          type: 'x',
+                          enabled: true,
+                          autoScaleYaxis: true
+                      },
+                      toolbar: {
+                          autoSelected: 'zoom'
+                      },
                       series: [
                           {                              
                               name: "total",
@@ -44,13 +52,7 @@ export const ResolvedVulnAndSeverity = () => {
                       ],
                       options: {
                           ...chartsConfig,
-                          colors: ['black', '#ef5350', '#ffa726', '#ffca28', '#66bb6a'],
-                          dataLabels: {
-                              enabled: true,
-                              position: 'top',
-                              fontSize: '120px',
-                              fontWeight: 'bold',
-                          },
+                          colors: ['black', '#ef5350', '#ffa726', '#ffca28', '#66bb6a'],              
                           title: {
                               text: 'RESOLVED VULNERABILITY TREND',
                               align: 'left'
@@ -66,7 +68,7 @@ export const ResolvedVulnAndSeverity = () => {
                               ...chartsConfig.xaxis,
                               categories: data.map(s => s.month),
                           }
-                      },
+                      }                      
                   },
               }]
               setData(mappeddata);

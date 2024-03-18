@@ -50,7 +50,7 @@ export const PotentialBreache = () => {
                         className="flex items-center gap-1 font-normal text-blue-gray-600"
                     >
                         <CheckCircleIcon strokeWidth={3} className="h-4 w-4 text-blue-gray-200" />
-                        <strong>{potential_data && potential_data.filter(s => new Date(s.finalDate).getMonth() == new Date().getMonth()).length} breaches</strong> this month
+                        <strong>{potential_data && potential_data.filter(s => new Date(s.finalDate).getMonth() == new Date().getMonth()).length} breaches</strong> likely this month
                     </Typography>
                 </div>
             </CardHeader>
