@@ -4,13 +4,13 @@ import {
 import { chartsConfig, app_config } from "@/configs";
 import { StatisticsChart } from "@/widgets/charts";
 import React, { useState, useEffect } from 'react';
-export const OpenVuln = () => {
+export const OpenVulnAndSeverity = () => {
     const [chartData, setData] = useState(false);    
   useEffect(() => {      
       async function fetchData() {          
           try {
-              const fetch_url = (app_config.use_json == false) ? app_config.api_base + "/api/Dashboard/opened" : "/data/opened.customization"
-              const response = await fetch(fetch_url);
+              let fetch_url = (app_config.use_json == false) ? app_config.api_base + "/api/Dashboard/opened_trend_severity" : "/data/opened.customization"
+              const response = await fetch((JSON.parse(localStorage.getItem("isProd")) ? fetch_url + "?branch=main%2Cmaster" : fetch_url));            
               const data = await response.json();
               const mappeddata = [{
                   color: "white",
@@ -19,18 +19,39 @@ export const OpenVuln = () => {
                   footer: "updated 8 min ago",
                   chart: {
                       type: "line",
-                      height: 300,
+                      height: 400,
                       series: [
-                          {
-                              name: "Vulnerabilities",
+                          {                              
+                              name: "total",
                               data: data.map(s => s.total),
                           },
+                          {
+                              name: "critical",
+                              data: data.map(s => s.critical),
+                          },
+                          {
+                              name: "high",
+                              data: data.map(s => s.high),
+                          },
+                          {
+                              name: "medium",
+                              data: data.map(s => s.medium),
+                          },
+                          {
+                              name: "low",
+                              data: data.map(s => s.low)
+                          }
                       ],
                       options: {
                           ...chartsConfig,
-                          colors: ["#388e3c"],
+                          colors: ['black', '#ef5350', '#ffa726', '#ffca28', '#66bb6a'],
+                          title: {
+                              text: 'OPEN VULNERABILITY TREND',
+                              align: 'left'
+                          },
                           stroke: {
-                              lineCap: "round",
+                              //lineCap: "round",
+                              curve: 'smooth'
                           },
                           markers: {
                               size: 5,
@@ -38,7 +59,7 @@ export const OpenVuln = () => {
                           xaxis: {
                               ...chartsConfig.xaxis,
                               categories: data.map(s => s.month),
-                          },
+                          }
                       },
                   },
               }]
@@ -69,4 +90,4 @@ export const OpenVuln = () => {
       </div>
   )
 }
-export default OpenVuln;
+export default OpenVulnAndSeverity;

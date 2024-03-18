@@ -16,8 +16,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
     dark: "bg-gradient-to-br from-gray-800 to-gray-900",
     white: "bg-white shadow-sm",
     transparent: "bg-transparent",
-  };
-
+    };
   return (
     <aside
       className={`${sidenavTypes[sidenavType]} ${
@@ -27,13 +26,12 @@ export function Sidenav({ brandImg, brandName, routes }) {
       <div
         className={`relative`}
           >
-              <Link to="/" className="py-6 px-8 text-center" Style="display:block;">
+              <Link to="/" className="py-6 px-8 text-center block">
           <Typography
             variant="h6"
-                      color={sidenavType === "dark" ? "white" : "blue-gray"}
-                      Style="font-size: 25px; color: #ec3000; }"
+                      color={sidenavType === "dark" ? "white" : "blue-gray"} className="text-[#ec3000] text-[25px]"
           >
-                      <img src={brandImg} Style="display: inline-table;"></img> {brandName}
+                      <img src={brandImg} className="inline-table"></img> {brandName}
           </Typography>
         </Link>
         <IconButton

@@ -1,23 +1,21 @@
 import {
     Typography
 } from "@material-tailwind/react";
-import { chartsConfig } from "@/configs";
+import { chartsConfig, app_config } from "@/configs";
 import { StatisticsChart } from "@/widgets/charts";
-import { ClockIcon } from "@heroicons/react/24/solid";
-
 import React, { useState, useEffect } from 'react';
 export const CloseVuln = () => {
-    const [chartData, setData] = useState(false);
+    const [chartData, setData] = useState(false);    
     useEffect(() => {
-        let data = [];
         async function fetchData() {
             try {
-                const response = await fetch("https://localhost:7210/api/Dashboard/resolved");
-                data = await response.json();
-                data = [{
+                const fetch_url = (app_config.use_json == false) ? app_config.api_base + "/api/Dashboard/resolved" : "/data/resolved.customization"
+                const response = await fetch(fetch_url);
+                const data = (await response.json())
+                const mappedData = [{
                     color: "white",
-                    title: "SLA",
-                    description: "SLA Compliance Trend",
+                    title: "CLOSE VULNERABILITY TREND",
+                    description: "CLOSE VULNERABILITY TREND",
                     footer: "updated 8 min ago",
                     chart: {
                         type: "line",
@@ -25,7 +23,7 @@ export const CloseVuln = () => {
                         series: [
                             {
                                 name: "Vulnerabilities",
-                                data: chartData.map(s => s.total),
+                                data: data.map(s => s.total),
                             },
                         ],
                         options: {
@@ -39,51 +37,16 @@ export const CloseVuln = () => {
                             },
                             xaxis: {
                                 ...chartsConfig.xaxis,
-                                categories: chartData.map(s => s.month),
+                                categories: data.map(s => s.month),
                             },
                         },
                     },
                 }]
-                setData(data);
+                setData(mappedData);
             } catch (error) {
-                if (error) {
-                    const response = await fetch("/data/resolved.customization");
-                    data = await response.json();
-                    data = [{
-                        color: "white",
-                        title: "SLA",
-                        description: "Close Vulnerability Trend",
-                        footer: "updated 8 min ago",
-                        chart: {
-                            type: "line",
-                            height: 300,
-                            series: [
-                                {
-                                    name: "Vulnerabilities",
-                                    data: data.map(s => s.total),
-                                },
-                            ],
-                            options: {
-                                ...chartsConfig,
-                                colors: ["#0288d1"],
-                                stroke: {
-                                    lineCap: "round",
-                                },
-                                markers: {
-                                    size: 5,
-                                },
-                                xaxis: {
-                                    ...chartsConfig.xaxis,
-                                    categories: data.map(s => s.month),
-                                },
-                            },
-                        },
-                    }]
-                    setData(data);
-                }
             }
         }
-        fetchData();       
+        fetchData();
     }, []);
     return (      
         <div>
@@ -97,8 +60,8 @@ export const CloseVuln = () => {
                             className="block items-center font-normal text-blue-gray-600"
                         >
                             <span className="flex float-left">{props.description}</span>
-                            <span className="flex float-right"><ClockIcon strokeWidth={2} className="h-4 w-4 text-blue-gray-400" />
-                                &nbsp;{props.footer}</span>
+                            {/*<span className="flex float-right"><ClockIcon strokeWidth={2} className="h-4 w-4 text-blue-gray-400" />*/}
+                            {/*    &nbsp;{props.footer}</span>*/}
                         </Typography>
                     }
                 />
