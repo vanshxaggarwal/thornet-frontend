@@ -139,28 +139,28 @@ export const App_Group_Breaches = () => {
                                                 <Typography className="text-xs font-semibold text-blue-gray-600">
                                                     <table>
                                                         <tr>
-                                                            <td Style="vertical-align: bottom;">
+                                                            <td className="align-bottom">
                                                                 <div className={severity[0]} style={{ height: calculateHeight(status[0]) }}>                                                                   
                                                                 </div>
                                                                 <div className="text-at-bottom-critical">
                                                                         {formatHeight(status[0])}
                                                                     </div>
                                                             </td>
-                                                            <td Style="vertical-align: bottom;">
+                                                            <td className="align-bottom">
                                                                 <div className={severity[1]} style={{ height: calculateHeight(status[1]) }}>
                                                                 </div>
                                                                 <div className="text-at-bottom-high">
                                                                         {formatHeight(status[1])}
                                                                     </div>
                                                             </td>
-                                                            <td Style="vertical-align: bottom;">
+                                                            <td className="align-bottom">
                                                                 <div className={severity[2]} style={{ height: calculateHeight(status[2]) }}>
                                                                 </div>
                                                                 <div className="text-at-bottom-medium">
                                                                         {formatHeight(status[2])}
                                                                     </div>
                                                             </td>
-                                                            <td Style="vertical-align: bottom;">
+                                                            <td className="align-bottom">
                                                                 { <div className={severity[3]} style={{ height: calculateHeight(status[3]) }}>                           
                                                                 </div> }
                                                                 <div className="text-at-bottom-low">

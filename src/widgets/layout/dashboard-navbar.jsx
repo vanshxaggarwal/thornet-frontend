@@ -34,8 +34,7 @@ export function DashboardNavbar() {
   const { fixedNavbar, openSidenav, isProd } = controller;
   const { pathname } = useLocation();
   const [layout, page] = pathname.split("/").filter((el) => el !== "");
-  const navigate = useNavigate();  
-    
+  const navigate = useNavigate();    
   return (
     <Navbar
       color={fixedNavbar ? "white" : "transparent"}
@@ -54,7 +53,7 @@ export function DashboardNavbar() {
               fixedNavbar ? "mt-1" : ""
             }`}
           >
-            <Link to={`/${layout}`}>
+            <Link to={`/${layout+"/home"}`}>
               <Typography
                 variant="small"
                 color="blue-gray"
@@ -191,7 +190,7 @@ export function DashboardNavbar() {
                   <Switch
                       id="navbar-fixed"
                       checked={JSON.parse(localStorage.getItem("isProd"))}
-                      label={JSON.parse(localStorage.getItem("isProd")) ? "Production" : "Global"}
+                      label={JSON.parse(localStorage.getItem("isProd")) ? "Production": "Global"  }
                       onChange={() => {
                           setProdMode(dispatch, !isProd);
                           navigate("/reload");

@@ -55,7 +55,7 @@ export const OutdatedScans = () => {
                     <strong>24%</strong> of total apps
                 </Typography>
             </CardHeader>
-            <CardBody className="pt-0 overflow-y-scroll">
+            <CardBody className="pt-0 overflow-y-scroll h-[435px] ">
                 {filteredData && filteredData.map(
                     ({ icon, color, appGroup, totalApps, lastScanned }, key) => (
                         <div key={appGroup} className="flex items-start gap-4 py-3">

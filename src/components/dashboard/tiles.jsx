@@ -10,64 +10,41 @@ import { app_config } from "@/configs";
 export const Tiles = () => {    
     const [tilesData, setData] = useState(false);
     useEffect(() => {
-        const data2 = [
-            {
-
-                color: "red",
-                icon: ExclamationTriangleIcon,
-                title: "Critical",
-                footer: {
-                    color: "text-green-500",
-                    value: "+1%",
-                    label: "than last week",
-                },
-            },
-            {
-                color: "orange",
-                icon: ExclamationTriangleIcon,
-                title: "High",
-                footer: {
-                    color: "text-green-500",
-                    value: "+3%",
-                    label: "than last week",
-                },
-            },
-            {
-                color: "amber",
-                icon: ExclamationTriangleIcon,
-                title: "Medium",
-                footer: {
-                    color: "text-red-500",
-                    value: "-2%",
-                    label: "than last week",
-                },
-            },
-            {
-                color: "green",
-                icon: ExclamationTriangleIcon,
-                title: "Low",
-                footer: {
-                    color: "text-green-500",
-                    value: "+5%",
-                    label: "than last week",
-                },
-            }
-        ];
-        async function update_tiles_count(data) {
-            if (data) {
-                data2[0].value = data.find(obj => obj.key === 'critical')?.count;
-                data2[1].value = data.find(obj => obj.key === 'high')?.count;
-                data2[2].value = data.find(obj => obj.key === 'medium')?.count;
-                data2[3].value = data.find(obj => obj.key === 'low')?.count;
-            }
-        }
         const fetchData = async () => {
             try {
                 let url = (app_config.use_json == false) ? app_config.api_base + "/api/Dashboard/tiles" : "/data/tiles.customization"
                 const response = await fetch((JSON.parse(localStorage.getItem("isProd")) ? url + "?branch=main%2Cmaster" : url));
-                const data = await response.json();
-                await update_tiles_count(data);
-                setData(data2);
+                const data = (await response.json()).map(s => {
+                    const colorMap = {
+                        'critical': 'red',
+                        'high': 'orange',
+                        'medium': 'amber',
+                        'default': 'green'
+                    };
+
+                    const titleMap = {
+                        'critical': 'Critical',
+                        'high': 'High',
+                        'medium': 'Medium',
+                        'default': 'Low'
+                    };
+
+                    const color = colorMap[s.key] || colorMap['default'];
+                    const title = titleMap[s.key] || titleMap['default'];
+
+                    return {
+                        color: color,
+                        icon: ExclamationTriangleIcon,
+                        title: title,
+                        value: s.count,
+                        footer: {
+                            color: (s.count > 0) ? "text-red-500" : "text-green-500",
+                            value: (((s.count - s.prev_count) / s.count) * 100).toFixed(1) + "%",
+                            label: "than last month",
+                        }
+                    };
+                });
+                setData(data);
             } catch (error) {
             }
         };
@@ -94,8 +71,4 @@ export const Tiles = () => {
         </div> 
     )
 }
-//Tiles.propTypes = {};
-
-//Tiles.defaultProps = {};
-
 export default Tiles;

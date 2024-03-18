@@ -20,7 +20,7 @@ import "../public/css/style.css";
 import "../public/js/utils.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  /*<React.StrictMode>*/
     <BrowserRouter>
       <ThemeProvider>
         <MaterialTailwindControllerProvider>
@@ -28,5 +28,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </MaterialTailwindControllerProvider>
       </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  /*</React.StrictMode>*/
 );
