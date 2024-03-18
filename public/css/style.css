@@ -1,42 +1,89 @@
 .critical {
-    width: 25px;
+    width: 32px;
     height: 40px;
     background: #c30000 !important;
     margin: 2%;
     color: white;
     text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
 .high {
-    width: 25px;
+    width: 32px;
     height: 30px;
     background: #e04b49 !important;
     margin: 2%;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
 .medium {
-    width: 25px;
+    width: 32px;
     height: 20px;
     background: #f5a623 !important;
     margin: 2%;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
 .low {
-    width: 25px;
+    width: 32px;
     height: 15px;
     background: #adb5bd !important;
     margin: 2%;
     color: white;
     text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
 .text-botton {
-   /* bottom: -21px !important;
-    position: relative;*/
+    bottom: 0px !important;
+    position: relative;
+}
+
+
+.text-at-bottom-low {
+    color: #adb5bd;
+    position: absolute;
+    /* left: 46.2%; */
+    transform: translateX(8%);
+    margin-top: -8px;
+}
+.text-at-bottom-medium {
+    color: #f5a623;
+    position: absolute;
+    /* left: 46.2%; */
+    transform: translateX(8%);
+    margin-top: -8px;
+}
+
+.text-at-bottom-high {
+    color: #e04b49;
+    position: absolute;
+    transform: translateX(8%);
+    margin-top: -8px;
+}
+
+.text-at-bottom-critical {
+    color: #c30000;
+    position: absolute;
+    transform: translateX(8%);
+    margin-top: -8px;
 }
 
 .container {
