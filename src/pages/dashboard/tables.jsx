@@ -20,8 +20,9 @@ export const Tables = () => {
                     "severity": ["critical", "high", "medium", "low"],
                     "status": [s.critical, s.high, s.medium, s.low],
                     "sla_status": "Within SLA",               
-                    "Last_scanned_date": new Date(s.last_scanned_date).toLocaleDateString()
+                    "Last_scanned_date": new Date(s.last_scan_date).toLocaleDateString()
                 }));
+                debugger;
                 data.sort((a, b) => b.count - a.count); // sort by descending App Count 
                 setData(data);
             }
